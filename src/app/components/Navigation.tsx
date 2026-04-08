@@ -1,8 +1,8 @@
 import { Calendar, BarChart3 } from 'lucide-react';
 
 interface NavigationProps {
-  activeView: 'citas' | 'resumen';
-  onViewChange: (view: 'citas' | 'resumen') => void;
+  activeView: 'appointments' | 'summary';
+  onViewChange: (view: 'appointments' | 'summary') => void;
 }
 
 export function Navigation({ activeView, onViewChange }: NavigationProps) {
@@ -10,9 +10,9 @@ export function Navigation({ activeView, onViewChange }: NavigationProps) {
     <nav className="fixed bottom-0 left-0 right-0 bg-card border-t border-border">
       <div className="flex">
         <button
-          onClick={() => onViewChange('citas')}
+          onClick={() => onViewChange('appointments')}
           className={`flex-1 flex flex-col items-center gap-1 py-4 transition-colors ${
-            activeView === 'citas'
+            activeView === 'appointments'
               ? 'text-primary'
               : 'text-muted-foreground'
           }`}
@@ -21,9 +21,9 @@ export function Navigation({ activeView, onViewChange }: NavigationProps) {
           <span className="text-xs">Citas</span>
         </button>
         <button
-          onClick={() => onViewChange('resumen')}
+          onClick={() => onViewChange('summary')}
           className={`flex-1 flex flex-col items-center gap-1 py-4 transition-colors ${
-            activeView === 'resumen'
+            activeView === 'summary'
               ? 'text-primary'
               : 'text-muted-foreground'
           }`}

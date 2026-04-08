@@ -1,13 +1,13 @@
 import { AppointmentCard, Appointment } from './AppointmentCard';
 
-interface CitasViewProps {
+interface AppointmentsViewProps {
   appointments: Appointment[];
 }
 
-export function CitasView({ appointments }: CitasViewProps) {
+export function AppointmentsView({ appointments }: AppointmentsViewProps) {
   const sortedAppointments = [...appointments].sort((a, b) => {
-    const timeA = a.hora.split(':').map(Number);
-    const timeB = b.hora.split(':').map(Number);
+    const timeA = a.time.split(':').map(Number);
+    const timeB = b.time.split(':').map(Number);
     return timeA[0] * 60 + timeA[1] - (timeB[0] * 60 + timeB[1]);
   });
 
